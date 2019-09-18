@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:securus_wallet/TransactionsProvider.dart';
 
 class TransactionsPage extends StatefulWidget {
   @override
@@ -8,8 +10,9 @@ class TransactionsPage extends StatefulWidget {
 class _TransactionsPageState extends State<TransactionsPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.amberAccent,
-    );
+    return Consumer<TransactionsProvider>(
+        builder: (context, model, child) => Container(
+              color: Colors.amberAccent,
+            ));
   }
 }

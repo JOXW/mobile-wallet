@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:securus_wallet/ThemeNotifier.dart';
 
 class SettingsPage extends StatefulWidget {
   @override
@@ -8,8 +10,12 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.yellowAccent,
-    );
+    return ListView(children: <Widget>[
+      SwitchListTile(
+                  value: false,
+                  onChanged: (bool value) {Provider.of<ThemeNotifier>(context).switchTheme();},
+                  title: new Text('Change Theme', style: new TextStyle(fontWeight: FontWeight.bold)),
+              )
+    ],);
   }
 }

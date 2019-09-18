@@ -1,0 +1,4 @@
+enum DaemonType {
+  Conventional,
+  BlockchainCacheApi,
+}
